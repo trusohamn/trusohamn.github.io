@@ -37,7 +37,30 @@ document.addEventListener('DOMContentLoaded', () => {
 	submitURL.addEventListener('submit', (e) => {
 		e.preventDefault();
 		const newURL = submitURL.querySelector('input').value;
+		submitURL.querySelector('input').value = "";
 		addNewImageLi(newURL);
+	});
+	
+	imagesList.addEventListener('change', (e) => {
+		const newTagText = e.target.value;
+		const li = e.target.parentNode;
+		
+		//check if there is already the same tag	
+		const prevTags = li.querySelectorAll('.tag');
+		var alreadyThere = false;
+		for(let i = 0; i < prevTags.length; i++){
+			if(prevTags[i].textContent == newTagText){
+				alreadyThere = true;
+				break;
+			}
+		}
+		//add the tag if the image doesnt contain same one
+		if(!alreadyThere){
+			const newTag = document.createElement('button');
+			newTag.className = 'tag';
+			newTag.textContent = newTagText;
+			li.appendChild(newTag);
+		}
 	});
 	
 
