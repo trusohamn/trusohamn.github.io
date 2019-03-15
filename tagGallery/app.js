@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		let newContent = `<option selected disabled value="">image tag</option>`;
 		for (let i=0; i<tags.length; i++){
 			newContent = newContent + `<option 
-			value=${tags[i].textContent}>${tags[i].textContent}</option>`;
+			value="${tags[i].textContent}">${tags[i].textContent}</option>`;
 		}
 		return newContent;
 	}
@@ -78,7 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		tagsDiv.appendChild(newTag);
 		//updating the dropdowns on images
 		for (let i = 0; i<imagesList.children.length; i++){
-			
+			const tagOption = document.createElement('option');
+			tagOption.textContent = newTagText;
+			tagOption.value = newTagText;			
+			imagesList.children[i].querySelector('select').appendChild(tagOption);
 		}; 
 
 	});
