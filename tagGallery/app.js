@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		newTagDiv.querySelector('input').value = "";
 		const newTag = document.createElement('button');
 		newTag.textContent = newTagText;
+		newTag.className = 'activeTag';
 		tagsDiv.appendChild(newTag);
 		//updating the dropdowns on images
 		for (let i = 0; i<imagesList.children.length; i++){
@@ -86,19 +87,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	});
 	
-	
-	// imagesList.addEventListener('mouseover', (e) => {
-		// if(e.target.tagName == 'LI') {
-			// e.target.querySelector('select').style.display = '';
-		// }
-	// });
-	
+	document.querySelector('#tags').addEventListener('click', (e) => {
+			if(e.target.tagName == 'BUTTON'){
+				if(e.target.className == 'activeTag'){
+					e.target.className = 'inactiveTag';		
+					lisWithTag(e.target.textContent, "none");
+				}
+				else if(e.target.className == 'inactiveTag'){
+					e.target.className = 'activeTag';	
+					lisWithTag(e.target.textContent, "");	
+				}
+			}
+		});
+
+	function lisWithTag(tag, displaySet){
+		const lis = document.querySelectorAll('#imagesList li');
+		for(let i = 0; i < lis.length; i++){
+			const li = lis[i];
+			tags = li.querySelectorAll(".tag");
+			for(let j = 0; j < tags.length; j++){
+				if(tags[j].textContent == tag){
+					li.style.display = displaySet;
+					break
+				} 
+			}
+		}
+	}
 	// imagesList.addEventListener('mouseout', (e) => {
-		// if(e.target.tagName == 'LI') {
-			// e.target.querySelector('select').style.display = 'none';
-		// }
+	// 	if(e.target.tagName == 'LI') {
+	// 		e.target.querySelector('select').style.display = 'none';
+	// 	}
 	// });
-});  
+
+})  
   
   
   
