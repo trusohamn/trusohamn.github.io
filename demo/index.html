@@ -1,0 +1,137 @@
+
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>ALS</title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="description">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="css/bootstrap.css">
+      <link rel="stylesheet" href="css/main.css">
+
+   </head>
+   
+   <body>
+      <header class="site-header">
+         <div class="wrap">
+            <img src="img/logo.png"  height="70">
+            <nav class="site-nav">
+               <div class="trigger">
+                  <a class="page-link" href="link">Tutorial</a>
+                  <a class="page-link" href="link">Contact</a>
+               </div>
+            </nav>
+         </div>
+      </header>
+      <div class="page-content">
+         <div class="wrap">
+            <div class="post">
+               <div id="input-group" class = 'row'>
+                  <div class="choice">
+                     <label class="control-label" >Species</label>
+                     <div class="controls inline-inputs">
+                        <select id="Species" onchange="setZScore()">
+                           <option value = 'SOD1' selected>Mouse</option>
+                           <option value = 'Human' >Human</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="choice">
+                     <label class="control-label" >Cell Type</label>
+                     <div class="controls inline-inputs">
+                        <select id="CellType" onchange="setZScore()">
+                           <option value = 'VLMC' selected>VLMC</option>
+                           <option value = 'vSMC' >vSMC</option>
+                           <option value = 'Endothelial'>Endothelium</option>
+                           <option value = 'Pericytes'>Pericytes</option>
+                           <option value = 'Microglia' >Microglia</option>
+                           <option value = 'Astrocytes' >Astrocytes</option>
+                           <option value = 'Interneurons' >Interneurons</option>
+                           <option value = 'Pyramidal Neurons' >Pyramidal Neurons</option>
+                           <option value = 'Oligodendrocytes' >Oligodendrocytes</option>
+                           <option value = 'OPC' >OPC</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div  class="choice">
+                     <label class="control-label"  >Direction</label>
+                     <div class="controls inline-inputs" >
+                        <select id="Direction" onchange="setZScore()">
+                           <option value = 'UP' selected>Up</option>
+                           <option value = 'DOWN' >Down</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="choice">
+                     <label class="control-label">Age</label>
+                     <div class="controls inline-inputs">
+                        <select id="Timepoint">
+                           <option value = '' >Timepoint</option>
+                        </select>
+                     </div>
+                  </div>
+                  <button class="btn btn-default" type="submit" onclick="setBootstrap()">Fetch gene ranking</button>
+               </div>
+			   
+               <div class="container">
+                  <img  id="img1" src="https://storage.googleapis.com/alsbootstrap/zsore/SOD1%20OPC%20UP.svg" width="200px"  height="250"
+					title="What is a zscore plot"			  
+                    onload="this.onload=null; this.src=setZScore();"/>
+                  <div class="scrollable">
+                     <img id="img2" src="https://storage.googleapis.com/alsbootstrap/bootstrap.png" width="3000px"  height="250"  
+						title = "What is a bootstrap plot"
+                        onload="this.onload=null; this.src=setBootstrap();"/>
+                  </div>
+               </div>
+
+		   
+			   
+               <article class="post-content">
+                  <div class="container">
+                     <div class="col-lg-6">
+                        <div class="input-group">
+							<input type="text" id="gene" list="json-datalist" class="form-control typeahead" type="text" placeholder = "gene name" value = "Gfap">
+							<datalist id="json-datalist"></datalist>						 							  
+							  
+                           <span class="input-group-btn">
+                           <button class="btn btn-default" type="submit" onclick="setGene()">Show gene</button>
+                           </span>
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                     </div>
+                  </div>
+                  <img id="imgGene" alt="gene not found" width="900px"></p>
+               </article>
+            </div>
+         </div>
+      </div>
+	  
+	  
+      <footer class="site-footer">
+         <div class="wrap">
+            <div class="footer-col-1 column">
+               <ul>
+                  <li>Sebastian Lewandowski</li>
+                  <li><a href="mailto:sebastian.lewandowski@ki.se">sebastian.lewandowski@ki.se</a></li>
+                  <li><a href="https://twitter.com/@slewandowski">@slewandowski</a></li>
+               </ul>
+            </div>
+            <div class="footer-col-3 column">
+               <p class="text">
+                  This page contains additional data supporting our manuscript:<br>
+                  <strong> Perivascular fibroblasts contribute to ALS </strong>
+               </p>
+               <p>Published in <a href="link">Journal name</a> (2018)</p>
+               </a>.</p>
+            </div>
+         </div>
+      </footer>
+    <script type="text/javascript" src="./js/script.js"></script>   
+   </body>
+</html>
+
