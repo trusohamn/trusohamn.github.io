@@ -30,7 +30,6 @@ p {
   text-shadow: 0 1px 0 rgba(0,0,0, .25);
 }
 form {
-  width: 60%;
   background: white;
   display: inline-block;
   overflow: hidden;
@@ -46,6 +45,10 @@ form button {
   background: #7bcbc4;
   border-radius: .2em;
 }
+#submitURL {
+  width: 50%;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -100,16 +103,18 @@ li button {
 /* tags */
 #tabPanel {
   margin-top: 0em;
-  display: -webkit-inline-box
+  width: 100%;
+  display: block
+
 }
 
 #tags {
-  float: right;
+  display: block
 }
 
 #newTag {
-  float: right;
   margin-top: 0.3em;
+  display: block
 }
 
 
