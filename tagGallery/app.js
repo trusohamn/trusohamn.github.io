@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     
     const tags = $('#flickrForm input').val();
-    const flickrAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+    const flickrAPI = "//api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
     const flickrOptions = {
       tags: tags,
       format: "json"  
