@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //jquery ajax flickr
   $('#flickrForm').submit( (e) => {
     e.preventDefault();
-    
+     
     const tags = $('#flickrForm input').val();
     const flickrAPI = "//api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
     const flickrOptions = {
