@@ -12,7 +12,7 @@ body {
 }
 h1,
 p,
-form button {
+button {
   color: white;  
 }
 h1 {
@@ -45,6 +45,13 @@ form button {
   background: #7bcbc4;
   border-radius: .2em;
 }
+
+#editGallery {
+	background: steelblue;
+	padding: 0.8em;
+	margin-top: 1.2em;
+	font-size: 1.2em;
+}
 .mainForm {
   width: 50%;
 }
@@ -60,8 +67,13 @@ ul li {
   border-radius: .2em;
   border: solid 1px rgba(88, 183, 205, .2);
   border-bottom: solid 2px rgba(88, 183, 205, .2);
-  position: relative;
 }
+
+ul li img {
+  display: block;
+  margin: auto;
+}
+
 button {
   border-radius: .3em;
   cursor: pointer;
@@ -86,7 +98,7 @@ input {
 
 li button {
   font-size: .78em;
-  margin-top: 1.65em;
+  margin-top: 0.65em;
   margin-right: .4em;
   padding: .4em .6em;
   color: white;
@@ -107,7 +119,7 @@ li button {
 }
 
 /* tags */
-#tabPanel {
+#tagPanel {
   margin-top: 0em;
   width: 40%;
   display: block
@@ -152,6 +164,11 @@ li button {
   ul li {
     margin-bottom: 1em;
   }
+  
+  ul li img {
+  max-width: 100%;
+}
+
   form {
     width: 95%;
     -webkit-flex-direction: column;
@@ -167,12 +184,22 @@ li button {
     font-size: 1em;
     text-align: center;
   }
+  #editGallery{
+	margin: 1em auto;
+	display: block;
+  }
   .wrapper {
     margin: 0;
   }
   .main {
     padding: 2em 1em .75em;
   }
+  
+ #tagPanel {
+  margin: auto; 
+  width: 40%;
+  display: block
+}
 }
 
 @media (min-width: 769px) {
