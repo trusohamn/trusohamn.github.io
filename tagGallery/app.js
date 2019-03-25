@@ -10,10 +10,23 @@ document.addEventListener('DOMContentLoaded', () => {
 		li.innerHTML = `
 		<img src= ${newURL} width = 300>
 		<div></div>
+		<div><button class="removeButton">remove</button></div>
 		`;
+		li.querySelector('button').style.display = 'none';
 		imagesList.prepend(li);
 	}	
-
+	function displayRemoveButtons(display){
+		const lis = imagesList.querySelectorAll('li');
+		for (let i = 0; i < lis.length; i++){
+			if(display) {
+				lis[i].querySelector('.removeButton').style.display = '';
+			}
+			else if(!display) {
+				lis[i].querySelector('.removeButton').style.display = 'none';
+			}
+		}
+	}
+	
 	function listAllTagsNames(){
 		const names = [];
 		const tags = tagsDiv.children;
@@ -98,6 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		else if(e.target.className == 'inactiveTag') {
 			e.target.className = 'activeTag'
 		}
+		else if(e.target.className == 'removeButton') {
+			imagesList.removeChild(e.target.parentNode.parentNode);
+		}
 	});
 	
 	//add new tag name
@@ -142,19 +158,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-	//editing view
+	//switching editing view
 	document.querySelector('#editGallery').addEventListener('click', (e) => {
 		const lis = imagesList.querySelectorAll('li');
 		if(e.target.textContent == 'Edit Gallery'){
 			for(let i=0; i<lis.length; i++) {
 				showAllTags(lis[i]);
 			}
+			displayRemoveButtons(true);
 			e.target.textContent = 'Ready';	
 		}
 		else if(e.target.textContent == 'Ready'){
 			for(let i=0; i<lis.length; i++) {
 				showActiveTags(lis[i]);
 			}
+			displayRemoveButtons(false);
 			e.target.textContent = 'Edit Gallery';	
 		}
 
