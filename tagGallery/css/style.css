@@ -73,7 +73,7 @@ button {
 }
 header {
   text-align: center;
-  background: linear-gradient(90deg, #2fc4e6, #a8c9d3, #1e7eb7);   
+  background: linear-gradient(-25deg, #2fc4e6, #a8c9d3, #1e7eb7);   
 }
 input {
   padding: 1em;
