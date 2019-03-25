@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		<img src= ${newURL} width = 300>
 		<div></div>
 		`;
-		imagesList.appendChild(li);
+		imagesList.prepend(li);
 	}	
 
 	function listAllTagsNames(){
@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				addInactiveTag(li, allNames[i]);
 			}	
 		}
-		
 	}
 
 	function showActiveTags(li) {
@@ -111,13 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		newTag.textContent = newTagText;
 		newTag.className = 'activeTag';
 		tagsDiv.appendChild(newTag);
-		//updating the dropdowns on images
-		for (let i = 0; i<imagesList.children.length; i++){
-			const tagOption = document.createElement('option');
-			tagOption.textContent = newTagText;
-			tagOption.value = newTagText;			
-			imagesList.children[i].querySelector('select').appendChild(tagOption);
-		}; 
 
 	});
 	
@@ -168,6 +160,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	});
 
+  //jquery ajax flickr
+  $('#flickrForm').submit( (e) => {
+    e.preventDefault();
+    
+    const tags = $('#flickrForm input').val();
+    const flickrAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+    const flickrOptions = {
+      tags: tags,
+      format: "json"  
+    }
+    function displayFirstPhoto(data){
+      const randomI = Math.floor(Math.random()*data.items.length);
+      addNewImageLi(data.items[randomI].media.m);
+    }
+    $.getJSON(flickrAPI, flickrOptions, displayFirstPhoto);
+  })
+  
 })  
   
   

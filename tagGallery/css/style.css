@@ -45,7 +45,7 @@ form button {
   background: #7bcbc4;
   border-radius: .2em;
 }
-#submitURL {
+.mainForm {
   width: 50%;
 }
 
@@ -75,8 +75,8 @@ header {
   text-align: center;
   background: linear-gradient(90deg, #2fc4e6, #a8c9d3, #1e7eb7);   
 }
-header input {
-  padding: 12px;
+input {
+  padding: 1em;
   font-size: 1.15em;
   width: 100%;
 }
@@ -93,7 +93,7 @@ li button {
 .wrapper {
   width: 100%;
   max-width: 900px;
-  margin: 2.5em auto;
+  margin: 1.5em auto;
   border-radius: .35em;
   background: #fcfcfc;
   overflow: hidden;
@@ -103,9 +103,11 @@ li button {
 /* tags */
 #tabPanel {
   margin-top: 0em;
-  width: 100%;
+  width: 40%;
   display: block
-
+}
+#newTag input {
+  padding: 0.25em;
 }
 
 #tags {
@@ -114,15 +116,6 @@ li button {
 
 #newTag {
   margin-top: 0.3em;
-  display: block
-}
-
-
-#tags button {
-  margin-top: 1.65em;
-  margin-right: 0em;
-  border-radius: .3em;
-
 }
 
 .activeTag{
@@ -178,14 +171,13 @@ li button {
 
 @media (min-width: 769px) {
   header {
-    height: 280px;
+    height: 350px;
     padding: 2.5em 1em 1em;  
     background-position: 0 -95px; 
   }
   .main > div {
-    float: right;
     display: inline-block;
-    margin-top: 3px;
+    margin-top: 0em;
     margin-right: 1.25%;
   }
   div > label {
@@ -195,12 +187,11 @@ li button {
     font-size: 5.8em;
   }
   h2 {
-    float: left;
     font-size: 1.9em;
     margin-left: 1.25%;
   }
   form {
-    margin: 4.15em auto 0;
+    margin: 1.15em auto 0;
     z-index: 3000;
     position: relative;
   }
@@ -208,7 +199,7 @@ li button {
     width: 90%;
   }
   .main {
-    padding: 3.8em 1.5em .75em;
+    padding: 1.8em 1.5em .75em;
     position: relative;
     z-index: 10;
   }

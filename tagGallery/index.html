@@ -12,10 +12,14 @@
   <div class="wrapper">
     <header>
       <h1>Tagged Gallery</h1>
-      <p>My first App</p>
-      <form id="submitURL">
+      <p>Keep your favourites!</p>
+      <form id="submitURL" class="mainForm">
         <input type="text" name="name" placeholder="Paste url to the image">
         <button type="submit" name="submit" value="submit">Submit</button>
+      </form>
+       <form id="flickrForm" class="mainForm">
+        <input type="text" name="name" placeholder="Find on Flickr">
+        <button type="submit" name="submit" value="submit">Random!</button>
       </form>
     </header>
 		
@@ -42,5 +46,6 @@
   </div>
   
   <script type="text/javascript" src="app.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </body>
 </html>
