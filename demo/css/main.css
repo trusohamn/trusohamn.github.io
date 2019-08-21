@@ -15,7 +15,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   font-weight: 300;
-  background-color: #fdfdfd;
+  background-color: #ffffff;
 }
 
 button.btn.btn-gray {
@@ -47,19 +47,17 @@ button.btn.btn-gray {
   width: 100%;
 }
 
-#img1 {
-  height: 30vh
+#img1, #img2  {
+  height: 15em
 }
 
-#img2 {
-  height: 30vh;
-}
 
 /* Layout Styles */
 
 .page-layout {
   margin: 0em auto;
   width: 90vw;
+  max-width: 1100px;
   height: 100%;
   display: grid;
   grid-template-areas: "choice choice" "zscore  boot" "form  form" "plot plot" "footer footer";
@@ -80,10 +78,10 @@ button.btn.btn-gray {
 .scrollable {
   margin: 1em;
   overflow-x: auto;
-  height: 100%;
   width: 100%;
   max-width: 70vw;
-  max-height: 300px;
+  height: 17em
+
 }
 
 .container {
@@ -150,12 +148,11 @@ button.btn.btn-gray {
     grid-template-columns: 1fr 1fr;
   }
   #img1 {
-    width: 100%
+    height: inherit;
+    width: 30vw;
   }
-  #img2 {
-    height: 30vh;
-  }
+
   .scrollable {
-    max-width: 95vw;
+    max-width: 80vw;
   }
 }
