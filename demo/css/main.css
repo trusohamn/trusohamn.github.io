@@ -155,4 +155,12 @@ button.btn.btn-gray {
   .scrollable {
     max-width: 80vw;
   }
+
+  #fetch-btn {
+    margin-top: 0.7em;
+  }
+
+  .choice > label {
+    margin: 0.7em 0em 0em 0em;
+  }
 }
