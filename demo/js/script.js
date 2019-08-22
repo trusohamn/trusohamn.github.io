@@ -39,7 +39,8 @@ function setBootstrap() {
   return p;
 }
 
-function setGene() {
+function setGene(e) {
+  e && e.preventDefault();
   const img = document.getElementById("imgGene");
   const geneName = document.getElementById("gene").value.toLowerCase();
   const p = `https://storage.googleapis.com/alscell/${geneName}.png`;
@@ -49,11 +50,8 @@ function setGene() {
 
 function getGeneNames() {
   const dataList = document.querySelector("#json-datalist");
-  const humanGenesNames = document.querySelector("#humanGenesNames");
   let geneOptions = "";
-  const url = humanGenesNames.checked
-    ? "https://raw.githubusercontent.com/trusohamn/trusohamn.github.io/master/demo/data/human_geneNames.json"
-    : "https://raw.githubusercontent.com/trusohamn/trusohamn.github.io/master/demo/data/mouse_geneNames.json";
+  const url =  "https://raw.githubusercontent.com/trusohamn/trusohamn.github.io/master/demo/data/geneNames.json";
   fetch(url)
     .then(res => res.json())
     .then(data => {

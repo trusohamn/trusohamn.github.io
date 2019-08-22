@@ -20,6 +20,8 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+
     <link rel="stylesheet" href="css/main.css" />
   </head>
 
@@ -139,7 +141,7 @@
         />
       </div>
 
-      <div id="geneForm" class="row">
+      <form id="geneForm" class="row" onsubmit="setGene(event)">
         <div class="col-lg-6">
           <div class="input-group mb-3">
             <input
@@ -158,18 +160,13 @@
                 id="showGene"
                 class="btn btn-gray"
                 type="submit"
-                onclick="setGene()"
               >
                 Show gene
               </button>
             </div>
           </div>
         </div>
-        <div class="col-lg-3">
-         <input type="checkbox" class="custom-control-input" id="humanGenesNames" onclick=getGeneNames()> 
-         <label class="custom-control-label" for="humanGenesNames">Human genes</label>
-        </div>
-      </div>
+      </form>
 
       <div id="mainGraph">
         <img id="imgGene" alt="gene not found" />
@@ -198,6 +195,5 @@
         </div>
       </footer>
     </div>
-    <script type="text/javascript" src="./js/script.js"></script>
   </body>
 </html>
