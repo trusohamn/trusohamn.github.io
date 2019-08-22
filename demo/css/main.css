@@ -35,6 +35,16 @@ button.btn.btn-gray {
   padding: 0em 1em
 }
 
+#geneForm  {
+  margin: 2em 0em 0em 0em;
+}
+
+
+/* bootstrap */
+
+.col-lg-6 {
+  padding-left: 0px;
+}
 /* IMAGES */
 
 .logo {
