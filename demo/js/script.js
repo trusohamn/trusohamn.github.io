@@ -51,7 +51,7 @@ function getGeneNames() {
   const dataList = document.querySelector("#json-datalist");
   let geneOptions = "";
   const url =
-    "https://raw.githubusercontent.com/trusohamn/Rmd-files/master/geneNames.json";
+  "https://raw.githubusercontent.com/trusohamn/trusohamn.github.io/master/demo/data/human_geneNames.json";
   fetch(url)
     .then(res => res.json())
     .then(data => {
