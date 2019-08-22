@@ -49,9 +49,11 @@ function setGene() {
 
 function getGeneNames() {
   const dataList = document.querySelector("#json-datalist");
+  const humanGenesNames = document.querySelector("#humanGenesNames");
   let geneOptions = "";
-  const url =
-  "https://raw.githubusercontent.com/trusohamn/trusohamn.github.io/master/demo/data/human_geneNames.json";
+  const url = humanGenesNames.checked
+    ? "https://raw.githubusercontent.com/trusohamn/trusohamn.github.io/master/demo/data/human_geneNames.json"
+    : "https://raw.githubusercontent.com/trusohamn/trusohamn.github.io/master/demo/data/mouse_geneNames.json";
   fetch(url)
     .then(res => res.json())
     .then(data => {
@@ -64,15 +66,16 @@ function getGeneNames() {
 
 window.onload = () => {
   const species = document.querySelector("#Species");
-  
+
   const changeHandler = () => {
     const timepoint = document.querySelector("#Timepoint");
 
-    timepoint.innerHTML = species.value === "Human" ?
-    "<option disabled selected  value='' >postmortem</option>" :
-    "<option selected value = '28' >28 days</option><option value = '42'>42 days</option><option value = '56'>56 days</option>	<option value = '70'>70 days</option><option value = '98' >98 days</option><option value = '112'  >112 days</option><option value = '126' >126 days</option>";
-  }
-  species.addEventListener('change', changeHandler);
+    timepoint.innerHTML =
+      species.value === "Human"
+        ? "<option disabled selected  value='' >postmortem</option>"
+        : "<option selected value = '28' >28 days</option><option value = '42'>42 days</option><option value = '56'>56 days</option>	<option value = '70'>70 days</option><option value = '98' >98 days</option><option value = '112'  >112 days</option><option value = '126' >126 days</option>";
+  };
+  species.addEventListener("change", changeHandler);
 
   changeHandler();
   setZScore();
