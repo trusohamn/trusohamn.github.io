@@ -1,145 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>ALS</title>
-   <meta name="viewport" content="width=device-width">
-   <meta name="description" content="description">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ALS</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="description" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
-   <link rel="stylesheet" href="css/main.css">
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
 
-</head>
-
-<body>
-   <header class="header">
+  <body>
+    <header class="header">
       <nav class="navbar navbar-expand-lg navbar-light">
-         <div>
-            <img src="img/logo.png" class="logo">
-         </div>
-         
-         <div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-               <a class="nav-item nav-link" href="#">Home</a>
-               <a class="nav-item nav-link" href="#">Tutorial</a>
-               <a class="nav-item nav-link" href="#">Contact</a>
-            </div>
-         </div>
-      </div>
-   </nav>
-</div>
-</header>
-   <div class="page-layout">
+        <div>
+          <img src="img/logo.png" class="logo" />
+        </div>
 
-      <div id="input-group" class='flexed'>
-         <div class="choice">
-            <label class="control-label">Species</label>
-            <div class="controls inline-inputs">
-               <select class="form-control form-control-sm" id="Species" onchange="setZScore()">
-                  <option value='SOD1' selected>Mouse</option>
-                  <option value='Human'>Human</option>
-               </select>
+        <div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="#">Home</a>
+              <a class="nav-item nav-link" href="#">Tutorial</a>
+              <a class="nav-item nav-link" href="#">Contact</a>
             </div>
-         </div>
-         <div class="choice">
-            <label class="control-label">Cell Type</label>
-            <div class="controls inline-inputs">
-               <select class="form-control form-control-sm" id="CellType" onchange="setZScore()">
-                  <option value='VLMC' selected>VLMC</option>
-                  <option value='vSMC'>vSMC</option>
-                  <option value='Endothelial'>Endothelium</option>
-                  <option value='Pericytes'>Pericytes</option>
-                  <option value='Microglia'>Microglia</option>
-                  <option value='Astrocytes'>Astrocytes</option>
-                  <option value='Interneurons'>Interneurons</option>
-                  <option value='Pyramidal Neurons'>Pyramidal Neurons</option>
-                  <option value='Oligodendrocytes'>Oligodendrocytes</option>
-                  <option value='OPC'>OPC</option>
-               </select>
-            </div>
-         </div>
-         <div class="choice">
-            <label class="control-label">Direction</label>
-            <div class="controls inline-inputs">
-               <select class="form-control form-control-sm" id="Direction" onchange="setZScore()">
-                  <option value='UP' selected>Up</option>
-                  <option value='DOWN'>Down</option>
-               </select>
-            </div>
-         </div>
-         <div class="choice">
-            <label class="control-label">Age</label>
-            <div class="controls inline-inputs">
-               <select class="form-control form-control-sm" id="Timepoint">
-                  <option value=''>Timepoint</option>
-               </select>
-            </div>
-         </div>
-         <div class="bottom choice">
-            <button id="fetch-btn" class="btn btn-gray" type="submit" onclick="setBootstrap()">Fetch gene ranking</button>
-         </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="page-layout">
+      <div id="input-group" class="flexed">
+        <div class="choice">
+          <label class="control-label">Species</label>
+          <div class="controls inline-inputs">
+            <select
+              class="form-control form-control-sm"
+              id="Species"
+              onchange="setZScore()"
+            >
+              <option value="SOD1" selected>Mouse</option>
+              <option value="Human">Human</option>
+            </select>
+          </div>
+        </div>
+        <div class="choice">
+          <label class="control-label">Cell Type</label>
+          <div class="controls inline-inputs">
+            <select
+              class="form-control form-control-sm"
+              id="CellType"
+              onchange="setZScore()"
+            >
+              <option value="VLMC" selected>VLMC</option>
+              <option value="vSMC">vSMC</option>
+              <option value="Endothelial">Endothelium</option>
+              <option value="Pericytes">Pericytes</option>
+              <option value="Microglia">Microglia</option>
+              <option value="Astrocytes">Astrocytes</option>
+              <option value="Interneurons">Interneurons</option>
+              <option value="Pyramidal Neurons">Pyramidal Neurons</option>
+              <option value="Oligodendrocytes">Oligodendrocytes</option>
+              <option value="OPC">OPC</option>
+            </select>
+          </div>
+        </div>
+        <div class="choice">
+          <label class="control-label">Direction</label>
+          <div class="controls inline-inputs">
+            <select
+              class="form-control form-control-sm"
+              id="Direction"
+              onchange="setZScore()"
+            >
+              <option value="UP" selected>Up</option>
+              <option value="DOWN">Down</option>
+            </select>
+          </div>
+        </div>
+        <div class="choice">
+          <label class="control-label">Age</label>
+          <div class="controls inline-inputs">
+            <select class="form-control form-control-sm" id="Timepoint">
+              <option value="">Timepoint</option>
+            </select>
+          </div>
+        </div>
+        <div class="bottom choice">
+          <button
+            id="fetch-btn"
+            class="btn btn-gray"
+            type="submit"
+            onclick="setBootstrap()"
+          >
+            Fetch gene ranking
+          </button>
+        </div>
       </div>
 
       <div id="zscore">
-         <img id="img1" src="https://storage.googleapis.com/alsbootstrap/zsore/SOD1%20OPC%20UP.svg"  title="a zscore plot" onload="this.onload=null; this.src=setZScore();" />
+        <img
+          id="img1"
+          src="https://storage.googleapis.com/alsbootstrap/zsore/SOD1%20OPC%20UP.svg"
+          title="a zscore plot"
+          onload="this.onload=null; this.src=setZScore();"
+        />
       </div>
 
       <div id="bootstrap" class="scrollable">
-         <img id="img2" src="https://storage.googleapis.com/alsbootstrap/bootstrap.png"
-            title="a bootstrap plot" onload="this.onload=null; this.src=setBootstrap();" />
+        <img
+          id="img2"
+          src="https://storage.googleapis.com/alsbootstrap/bootstrap.png"
+          title="a bootstrap plot"
+          onload="this.onload=null; this.src=setBootstrap();"
+        />
       </div>
 
       <div id="geneForm" class="row">
-         <div class="col-lg-6">
-            <div class="input-group mb-3">
-               <input type="text" id="gene" list="json-datalist" class="form-control" placeholder="gene name"
-                  value="Gfap" aria-label="Recipient's username" aria-describedby="showGene">
-               <datalist id="json-datalist"></datalist>
-               <div class="input-group-append">
-                  <button id="showGene" class="btn btn-gray" type="submit" onclick="setGene()">Show gene</button>
-         
-               </div>
+        <div class="col-lg-6">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              id="gene"
+              list="json-datalist"
+              class="form-control"
+              placeholder="gene name"
+              value="Gfap"
+              aria-label="Recipient's username"
+              aria-describedby="showGene"
+            />
+            <datalist id="json-datalist"></datalist>
+            <div class="input-group-append">
+              <button
+                id="showGene"
+                class="btn btn-gray"
+                type="submit"
+                onclick="setGene()"
+              >
+                Show gene
+              </button>
             </div>
-         </div>
+          </div>
+        </div>
       </div>
 
       <div id="mainGraph">
-         <img id="imgGene" alt="gene not found"></p>
+        <img id="imgGene" alt="gene not found" />
       </div>
 
       <footer class="site-footer flexed justify-content-between">
-            <div>
-               <ul class="list-unstyled">
-                  <li>Sebastian Lewandowski</li>
-                  <li><a href="mailto:sebastian.lewandowski@ki.se">sebastian.lewandowski@ki.se</a></li>
-                  <li><a href="https://twitter.com/@slewandowski">@slewandowski</a></li>
-               </ul>
-            </div>
-            <div>
-               <p class="text">
-                  This page contains additional data supporting our manuscript:<br>
-                  <strong> Perivascular fibroblasts contribute to ALS </strong>
-               </p>
-               <p>Published in <a href="link">Journal name</a> (2018)</p>
-               </a>.</p>
-            </div>
-         </div>
+        <div>
+          <ul class="list-unstyled">
+            <li>Sebastian Lewandowski</li>
+            <li>
+              <a href="mailto:sebastian.lewandowski@ki.se"
+                >sebastian.lewandowski@ki.se</a
+              >
+            </li>
+            <li>
+              <a href="https://twitter.com/@slewandowski">@slewandowski</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p class="text">
+            This page contains additional data supporting our manuscript:<br />
+            <strong> Perivascular fibroblasts contribute to ALS </strong>
+          </p>
+          <p>Published in <a href="link">Journal name</a> (2018)</p>
+        </div>
       </footer>
-</div>
-   <script type="text/javascript" src="./js/script.js"></script>
-</body>
-
+    </div>
+    <script type="text/javascript" src="./js/script.js"></script>
+  </body>
 </html>
