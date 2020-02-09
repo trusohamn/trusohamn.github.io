@@ -48,7 +48,12 @@
             <div class="navbar-nav">
               <a class="nav-item nav-link" href="#">Home</a>
               <a class="nav-item nav-link" href="#">Tutorial</a>
-              <a class="nav-item nav-link" href="#">Contact</a>
+              <a
+                class="nav-item nav-link"
+                href="mailto:sebastian.lewandowski@ki.se?Subject=ALS%20Atlas"
+                target="_top"
+                >Contact</a
+              >
             </div>
           </div>
         </div>
@@ -77,7 +82,7 @@
               id="CellType"
               onchange="setZScore()"
             >
-              <option value="VLMC" selected>VLMC</option>
+              <option value="VLMC" selected>PVF</option>
               <option value="vSMC">vSMC</option>
               <option value="Endothelial">Endothelium</option>
               <option value="Pericytes">Pericytes</option>
@@ -156,11 +161,7 @@
             />
             <datalist id="json-datalist"></datalist>
             <div class="input-group-append">
-              <button
-                id="showGene"
-                class="btn btn-gray"
-                type="submit"
-              >
+              <button id="showGene" class="btn btn-gray" type="submit">
                 Show gene
               </button>
             </div>
@@ -175,23 +176,26 @@
       <footer class="site-footer flexed justify-content-between">
         <div>
           <ul class="list-unstyled">
-            <li>Sebastian Lewandowski</li>
+            <li>Contact corresponding author:</li>
             <li>
               <a href="mailto:sebastian.lewandowski@ki.se"
                 >sebastian.lewandowski@ki.se</a
               >
             </li>
             <li>
-              <a href="https://twitter.com/@slewandowski">@slewandowski</a>
+              <a href="https://twitter.com/@lewandowskiSA">@lewandowskiSA</a>
             </li>
           </ul>
         </div>
         <div>
           <p class="text">
             This page contains additional data supporting our manuscript:<br />
-            <strong> Perivascular fibroblasts contribute to ALS </strong>
+            <strong>
+              Perivascular fibroblasts contribute to sporadic ALS
+              neurodegradation
+            </strong>
           </p>
-          <p>Published in <a href="link">Journal name</a> (2018)</p>
+          <p>Published in <a href="link">Journal name</a> (2020)</p>
         </div>
       </footer>
     </div>
